@@ -1,14 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Banglore Home Price Prediction</title>
+    <title>www.bhkbuddy.com</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
 	<link rel="stylesheet" href="app.css">
+	
 </head>
 <body>
-<div class="img"></div>
+	<div>
+		<nav class="nav">
+			<div class="icon"><img src="home-icon-vector.jpg" alt="house icon"></div>
+			<div class="title">BHK buddy</div>
+			<div class="login" onclick="showLogin()">Login</div>
+			<div class="signup" onclick="showSignup()">Signup</div> 
+			<div class="contact" onclick="showContact()">Contact</div> 
+		</nav>
+	
+		<!-- Login Modal -->
+		<div id="loginModal" class="modal" onclick="handleOutsideClick(event, 'loginModal')">
+			<div class="modal-content">
+				<div class="left-panel">
+					<img src="home-icon-vector.jpg" alt="House Icon">
+					<h2>Login</h2>
+					<ul>
+						<li>✔ Secure and fast login</li>
+						<li>✔ Access exclusive features</li>
+						<li>✔ Manage your account with ease</li>
+					</ul>
+				</div>
+				<div class="right-panel">
+					<h3>Enter your email and password</h3>
+					<form id="loginForm">
+						<input type="email" placeholder="Email" required>
+						<input type="password" placeholder="Password" required>
+						<button type="submit" class="continue-btn">Login</button>
+					</form>
+				</div>
+				<span class="close" onclick="closeModal('loginModal')">&times;</span>
+			</div>
+		</div>
+	
+		<!-- Signup Modal -->
+		<div id="signupModal" class="modal" onclick="handleOutsideClick(event, 'signupModal')">
+			<div class="modal-content">
+				<div class="left-panel">
+					<img src="home-icon-vector.jpg" alt="House Icon">
+					<h2>Sign Up</h2>
+					<ul>
+						<li>✔ Zero brokerage</li>
+						<li>✔ Thousands of new listings daily</li>
+						<li>✔ Save 100 Cr+ brokerage monthly</li>
+					</ul>
+				</div>
+				<div class="right-panel">
+					<h3>Enter your details to sign up</h3>
+					<form id="signupForm">
+						<input type="text" placeholder="Name" required>
+						<input type="email" placeholder="Email" required>
+						<input type="password" placeholder="Password" required>
+						<button type="submit" class="continue-btn">Sign Up</button>
+					</form>
+				</div>
+				<span class="close" onclick="closeModal('signupModal')">&times;</span>
+			</div>
+		</div>
+    </div>
+<!-- Contact Modal -->
+<div id="contactModal" class="modal" onclick="handleOutsideClick(event, 'contactModal')">
+    <div class="modal-content">
+        <div class="left-panel">
+            <img src="home-icon-vector.jpg" alt="House Icon">
+            <h2>Contact Us</h2>
+            <ul>
+                <li>✔ Fast response</li>
+                <li>✔ Dedicated support</li>
+                <li>✔ We're here to help you</li>
+            </ul>
+            <!-- App's contact details -->
+            <div class="contact-info">
+                <p><strong>Phone:</strong> +91 123 456 7890</p>
+                <p><strong>Email:</strong> support@bhkbuddy.com</p>
+                <p><strong>Address:</strong> 123, 5th Cross, Electronic City, Bangalore</p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <h3>Enter your details and message</h3>
+            <form id="contactForm">
+                <input type="text" placeholder="Name" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <textarea placeholder="Your message..." required></textarea><br>
+                <button type="submit" class="continue-btn">Send Message</button>
+            </form>
+        </div>
+        <span class="close" onclick="closeModal('contactModal')">&times;</span>
+    </div>
+</div>
+
+
+<div class="sliding-background"></div>
+<!-- <div class="quote">
+	<div class="icon2"><img src="home-icon-vector.jpg" alt="house icon"></div>
+	<div class="title1">DreamHome</div>
+	
+</div>
+<div class="tagline">Make Your Dream Come True in NammaBengaluru</div> -->
+
 <form class="form">
+	
 	<h2>Area (Square Feet)</h2>
     <input class="area"  type="text" id="uiSqft" class="floatLabel" name="Squareft" value="1000">
 	<h2>BHK</h2>
