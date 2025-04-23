@@ -4,20 +4,118 @@
     <title>www.bhkbuddy.com</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
-	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="app2.css">
 	
 </head>
 <body>
-	<div>
-		<nav class="nav">
-			<div class="icon"><img src="home-icon-vector.jpg" alt="house icon"></div>
-			<div class="title">BHK buddy</div>
-			<div class="login" onclick="showLogin()">Login</div>
-			<div class="signup" onclick="showSignup()">Signup</div> 
-			<div class="contact" onclick="showContact()">Contact</div> 
-		</nav>
-	
-		<!-- Login Modal -->
+	<div class="hero">
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="bluehome.png" alt="BHK Buddy" class="logo-img">
+                    <span class="logo-text">BHK Buddy</span>
+                </div>
+            </div>
+        </nav>
+        
+
+        <div class="hero-content">
+            <h1 class="hero-title">Find Your Dream Home's Value in Bangalore</h1>
+            <p class="hero-description">Use our prediction tool to get accurate estimates for house prices across Bangalore. Make informed decisions for your real estate investments.</p>
+            </div>
+    </div>
+
+    <main class="container">
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Accurate Predictions</h3>
+                <p>Our ML model is trained on extensive real estate data to provide precise estimates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Location-Based</h3>
+                <p>Get specific predictions based on different areas across Bangalore.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Results</h3>
+                <p>Receive price estimates immediately with our real-time processing.</p>
+            </div>
+        </div>
+    </main>
+	<div class="calculator-container">
+        <h1>Price Calculator</h1>
+        <form class="form">
+            <h2>Area (Square Feet)</h2>
+            <input class="area" type="text" id="uiSqft" name="Squareft" value="1000" placeholder="Enter area in sq ft">
+            
+            <h2>BHK</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bhk-1" name="uiBHK" value="1"/>
+                <label for="radio-bhk-1">1</label>
+                <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked/>
+                <label for="radio-bhk-2">2</label>
+                <input type="radio" id="radio-bhk-3" name="uiBHK" value="3"/>
+                <label for="radio-bhk-3">3</label>
+                <input type="radio" id="radio-bhk-4" name="uiBHK" value="4"/>
+                <label for="radio-bhk-4">4</label>
+                <input type="radio" id="radio-bhk-5" name="uiBHK" value="5"/>
+                <label for="radio-bhk-5">5</label>
+            </div>
+
+            <h2>Bath</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1"/>
+                <label for="radio-bath-1">1</label>
+                <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
+                <label for="radio-bath-2">2</label>
+                <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
+                <label for="radio-bath-3">3</label>
+                <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4"/>
+                <label for="radio-bath-4">4</label>
+                <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5"/>
+                <label for="radio-bath-5">5</label>
+            </div>
+
+            <h2>Location</h2>
+            <div>
+                <select class="location" name="uiLocations" id="uiLocations">
+                    <option value="" disabled selected>Choose a Location</option>
+                    <option>Electronic City</option>
+                    <option>Rajaji Nagar</option>
+                </select>
+            </div>
+
+            <button class="submit" type="button" onclick="onClickedEstimatePrice()">Estimate Price</button>
+        </form>
+
+        <div id="uiEstimatedPrice" class="result">
+            <h2></h2>
+        </div>
+    </div>
+
+    <!-- Add jQuery script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   
+
+    <!-- Your custom JavaScript -->
+    <script src="app.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 BHK Buddy. All rights reserved.</p>
+            <p>Making house hunting easier in Bangalore</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+<!-- 	
+		Login Modal
 		<div id="loginModal" class="modal" onclick="handleOutsideClick(event, 'loginModal')">
 			<div class="modal-content">
 				<div class="left-panel">
@@ -40,9 +138,9 @@
 				<span class="close" onclick="closeModal('loginModal')">&times;</span>
 			</div>
 		</div>
-	
+	 -->
 		<!-- Signup Modal -->
-		<div id="signupModal" class="modal" onclick="handleOutsideClick(event, 'signupModal')">
+		<!-- <div id="signupModal" class="modal" onclick="handleOutsideClick(event, 'signupModal')">
 			<div class="modal-content">
 				<div class="left-panel">
 					<img src="home-icon-vector.jpg" alt="House Icon">
@@ -65,9 +163,9 @@
 				<span class="close" onclick="closeModal('signupModal')">&times;</span>
 			</div>
 		</div>
-    </div>
+    </div> -->
 <!-- Contact Modal -->
-<div id="contactModal" class="modal" onclick="handleOutsideClick(event, 'contactModal')">
+<!-- <div id="contactModal" class="modal" onclick="handleOutsideClick(event, 'contactModal')">
     <div class="modal-content">
         <div class="left-panel">
             <img src="home-icon-vector.jpg" alt="House Icon">
@@ -76,9 +174,9 @@
                 <li>✔ Fast response</li>
                 <li>✔ Dedicated support</li>
                 <li>✔ We're here to help you</li>
-            </ul>
+            </ul> -->
             <!-- App's contact details -->
-            <div class="contact-info">
+            <!-- <div class="contact-info">
                 <p><strong>Phone:</strong> +91 123 456 7890</p>
                 <p><strong>Email:</strong> support@bhkbuddy.com</p>
                 <p><strong>Address:</strong> 123, 5th Cross, Electronic City, Bangalore</p>
@@ -98,7 +196,7 @@
 </div>
 
 
-<div class="sliding-background"></div>
+<div class="sliding-background"></div> -->
 <!-- <div class="quote">
 	<div class="icon2"><img src="home-icon-vector.jpg" alt="house icon"></div>
 	<div class="title1">DreamHome</div>
@@ -106,7 +204,7 @@
 </div>
 <div class="tagline">Make Your Dream Come True in NammaBengaluru</div> -->
 
-<form class="form">
+<!-- <form class="form">
 	
 	<h2>Area (Square Feet)</h2>
     <input class="area"  type="text" id="uiSqft" class="floatLabel" name="Squareft" value="1000">
@@ -149,4 +247,4 @@
 	<button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
 	<div id="uiEstimatedPrice" class="result">	<h2></h2> </div>
 </body>
-</html>
+</html> -->

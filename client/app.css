@@ -202,3 +202,124 @@ body, html {
 .result {
     background: #dcd686;
 }
+/* app2.css */
+
+/* 1. Global Setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: #f4f7fc;
+    color: #333;
+  }
+  
+  /* 2. Container */
+  .calculator-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* 3. Header */
+  .calculator-container h1 {
+    font-size: 1.8rem;
+    color: #1e3a8a; /* deep blue */
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* 4. Form Sections */
+  .calculator-container h2 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  .calculator-container input[type="text"],
+  .calculator-container select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .calculator-container input[type="text"]:focus,
+  .calculator-container select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+  }
+  
+  /* 5. Radio Groups as Cards */
+  .switch-field {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .switch-field input {
+    display: none;
+  }
+  .switch-field label {
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    padding: 0.6rem 0;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .switch-field input:checked + label {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #fff;
+  }
+  
+  /* 6. Button */
+  .submit {
+    display: block;
+    width: 100%;
+    padding: 0.85rem;
+    background: #1e40af;
+    color: #fff;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .submit:hover {
+    background: #2563eb;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+  }
+  
+  /* 7. Result Card */
+  .result {
+    margin-top: 2rem;
+    background: #eef2ff;
+    border-left: 4px solid #6366f1;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+  }
+  .result h2 {
+    font-size: 1.25rem;
+    color: #1e3a8a;
+  }
+  
+  /* 8. Responsive */
+  @media (max-width: 480px) {
+    .calculator-container {
+      margin: 30px 1rem;
+      padding: 1.5rem;
+    }
+  }
+  
