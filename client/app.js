@@ -107,10 +107,7 @@
 
 // window.onload =onPageLoad;
 
-function toggleContactPopup() {
-  const popup = document.getElementById('contactPopup');
-  popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
-}
+
 // Predicting
 function getBathValue() {
   var uiBathrooms = document.getElementsByName("uiBathrooms");
